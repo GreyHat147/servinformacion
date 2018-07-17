@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row" style="margin: 40px 0">
+    <div class="col-md-2">
+      <a routerLink="/" class="btn btn-primary">Volver</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>API</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+              <button type="button" class="btn btn-primary" (click)="get()">GET</button>
+              <div *ngIf="getData" style="margin-bottom: 20px">
+                  <pre>
+                      {{ getData | json }}
+                  </pre>
+              </div>    
+            </div>
+        </div>  
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+              <button type="button" class="btn btn-primary" (click)="post()">POST</button>
+              <br>
+              <hr>
+              <input type="text" class="form-control" [(ngModel)]="dataPost" name="dataPost" placeholder="Escribe algo para enviarlo como data en la peticion!">
+              <div *ngIf="postData" style="margin-bottom: 20px">
+                  <pre>
+                      {{ postData | json }}
+                  </pre>
+              </div>    
+            </div>
+        </div>  
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+              <button type="button" class="btn btn-primary" (click)="update()">UPDATE</button>
+              <br>
+              <hr>
+              <input type="text" class="form-control" [(ngModel)]="dataUpdate" name="dataUpdate" placeholder="Escribe algo para enviarlo como data en la peticion!">
+              <div *ngIf="dataUpdate" style="margin-bottom: 20px">
+                  <pre>
+                      {{ updateData | json }}
+                  </pre>
+              </div>    
+            </div>
+        </div>  
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+              <button type="button" class="btn btn-primary" (click)="delete()">DELETE</button>
+              <br>
+              <hr>
+              <input type="text" class="form-control" [(ngModel)]="dataDelete" name="dataDelete" placeholder="Escribe algo para enviarlo como data en la peticion!">
+              <div *ngIf="deleteData" style="margin-bottom: 20px">
+                  <pre>
+                      {{ deleteData | json }}
+                  </pre>
+              </div>    
+            </div>
+        </div>  
+    </div>
+  </div>
+</div>
